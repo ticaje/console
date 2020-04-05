@@ -11,18 +11,26 @@ namespace Ticaje\Crawler\Application\Console;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use Ticaje\Crawler\Business\Crawler\Reader;
+
 /**
  * Class Launcher
  * @package Ticaje\Crawler\Application\Console
  */
 class Launcher extends Base
 {
-    protected $name = 'ticaje:crawler:hello';
+    protected $name = 'ticaje:crawler:read';
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        echo 'Hello World';
-        $output->writeln("We're just done");
+        $output->writeln("Launching logic:");
+        $this->launch($output);
         return 0;
+    }
+
+    public function launch(OutputInterface $output)
+    {
+        $reader = new Reader();
+        $output->writeln($reader->read());
     }
 }
