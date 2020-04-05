@@ -8,11 +8,13 @@ declare(strict_types=1);
 
 namespace Ticaje\Crawler\Business\Crawler;
 
+use Ticaje\Crawler\Business\Policies\Crawler\ReaderInterface;
+
 /**
  * Class Reader
  * @package Ticaje\Crawler\Business\Crawler
  */
-class Reader
+class Reader implements ReaderInterface
 {
     public function read()
     {
