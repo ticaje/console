@@ -28,5 +28,10 @@
         "psr-4": {
             "Ticaje\\Crawler\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ticaje\\Crawler\\Test\\": "tests/"
+        }
     }
 }
