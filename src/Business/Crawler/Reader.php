@@ -2,13 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Crawler Class
+ * Crawler Reader Class
  * @author Hector Luis Barrientos <ticaje@filetea.me>
  */
 
 namespace Ticaje\Crawler\Business\Crawler;
 
+use Exception;
 use Ticaje\Crawler\Business\Policies\Crawler\ReaderInterface;
+use Ticaje\Crawler\Business\Policies\Crawler\Strategy\ReaderStrategyInterface;
 
 /**
  * Class Reader
@@ -16,8 +18,30 @@ use Ticaje\Crawler\Business\Policies\Crawler\ReaderInterface;
  */
 class Reader implements ReaderInterface
 {
-    public function read()
+    private $driver;
+
+    /**
+     * Reader constructor.
+     * @param ReaderStrategyInterface $driver
+     * The params should be injected using a dependency container so respecting dependency inversion principle
+     */
+    public function __construct(
+        ReaderStrategyInterface $driver
+    )
     {
-        return true;
+        $this->driver = $driver;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function read(string $url): string
+    {
+        try {
+            $content = $this->driver->read($url);
+            return $content;
+        } catch (Exception $exception) {
+            return "Error {$exception->getMessage()}";
+        }
     }
 }
