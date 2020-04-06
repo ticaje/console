@@ -31,7 +31,6 @@ class Parser implements ParserInterface
     {
         try {
             $links = $this->fetchMultimediaLinks($content);
-            print_r($links);
             return !empty($links);
         } catch (Exception $exception) {
             return false;
