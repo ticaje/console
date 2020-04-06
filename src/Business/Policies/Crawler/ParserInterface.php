@@ -2,21 +2,21 @@
 declare(strict_types=1);
 
 /**
- * Crawler Interface
+ * Crawler Parser Interface
  * @author Hector Luis Barrientos <ticaje@filetea.me>
  */
 
 namespace Ticaje\Crawler\Business\Policies\Crawler;
 
 /**
- * Interface ReaderInterface
+ * Interface ParserInterface
  * @package Ticaje\Crawler\Business\Policies\Crawler
  */
-interface ReaderInterface
+interface ParserInterface
 {
     /**
-     * @param string $url
-     * @return string
+     * @param string $content
+     * @return bool
      */
-    public function read(string $url): string;
+    public function parse(string $content): bool;
 }

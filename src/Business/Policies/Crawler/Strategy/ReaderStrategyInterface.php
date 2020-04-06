@@ -6,13 +6,9 @@ declare(strict_types=1);
  * @author Hector Luis Barrientos <ticaje@filetea.me>
  */
 
-namespace Ticaje\Crawler\Business\Policies\Crawler;
+namespace Ticaje\Crawler\Business\Policies\Crawler\Strategy;
 
-/**
- * Interface ReaderInterface
- * @package Ticaje\Crawler\Business\Policies\Crawler
- */
-interface ReaderInterface
+interface ReaderStrategyInterface
 {
     /**
      * @param string $url
