@@ -13,9 +13,11 @@
     "description": "This is a tool to crawl a public resurce in the internet and download media from it",
     "type": "project",
     "require": {
-        "php": "~7.1.3||~7.2.0||~7.3.0",
+        "php": "~7.1.3||~7.2.0||~7.3.0||~7.4.0",
         "php-di/php-di": "^6.0",
-        "symfony/console": "^5.0"
+        "symfony/console": "^5.0",
+        "league/tactician": "^1.1",
+        "ticaje/hexagonal": "^1.0"
     },
     "require-dev": {
         "allure-framework/allure-phpunit": "~1.2.0",
