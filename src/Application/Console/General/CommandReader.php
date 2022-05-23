@@ -20,12 +20,12 @@ use Ticaje\Hexagonal\Application\Implementors\UseCase\Bus\TacticianMiddleWare;
 use Ticaje\Hexagonal\Application\UseCase\Bus\BusOrchrestator;
 
 /**
- * Class Reader
+ * Class CommandReader
  * @package Ticaje\Crawler\Application\Console\General
  */
-class Reader extends Base
+class CommandReader extends Base
 {
-    protected $name = 'ticaje:read';
+    protected $name = 'ticaje:command:read';
 
     protected $description = 'Read from any source';
 
