@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Ticaje\Crawler\Application\Console\General\CommandReader as AgnosticReader;
+use Ticaje\Crawler\Application\Console\File\Reader as FileReader;
+
+$application = new Application();
+# add our commands
+$application->add(new FileReader());
+$application->add(new AgnosticReader());
+$application->run();

@@ -1,6 +1,5 @@
 /vendor/
 /var/
-/bin/
 node_modules/
 
 storage/*.key
