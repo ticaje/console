@@ -1,7 +1,7 @@
 /vendor/
 /var/
 node_modules/
-
+/public/
 storage/*.key
 .env
 .phpunit.result.cache
